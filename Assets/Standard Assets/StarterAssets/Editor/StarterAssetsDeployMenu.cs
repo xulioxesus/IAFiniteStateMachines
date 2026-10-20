@@ -2,7 +2,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 #if STARTER_ASSETS_PACKAGES_CHECKED
-using Cinemachine;
+
 #endif
 
 namespace StarterAssets
@@ -110,8 +110,8 @@ namespace StarterAssets
             else
             {
                 // make sure the found camera has a cinemachine brain (we only need 1)
-                if (!mainCameras[0].TryGetComponent(out CinemachineBrain cinemachineBrain))
-                    mainCameras[0].AddComponent<CinemachineBrain>();
+                if (!mainCameras[0].TryGetComponent(out Unity.Cinemachine.CinemachineBrain cinemachineBrain))
+                    mainCameras[0].AddComponent<Unity.Cinemachine.CinemachineBrain>();
             }
         }
 
@@ -119,7 +119,7 @@ namespace StarterAssets
             GameObject cinemachineVirtualCamera)
         {
             var serializedObject =
-                new SerializedObject(cinemachineVirtualCamera.GetComponent<CinemachineVirtualCamera>());
+                new SerializedObject(cinemachineVirtualCamera.GetComponent<Unity.Cinemachine.CinemachineVirtualCamera>());
             var serializedProperty = serializedObject.FindProperty("m_Follow");
             serializedProperty.objectReferenceValue = target.transform;
             serializedObject.ApplyModifiedProperties();

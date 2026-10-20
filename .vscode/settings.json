@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "IAFiniteStateMachines.sln"
+    "dotnet.defaultSolution": "IAFiniteStateMachines.slnx"
 }
